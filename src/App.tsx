@@ -1,23 +1,27 @@
-import React from 'react';
+import React, { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-function App() {
+import Box from "@mui/material/Box";
+import Nav from "./Components/Nav";
+
+const App = () => {
+  const [userData, setUserData] = useState({});
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box
+      className="app d-flex flex-column h-100"
+      sx={{
+        minHeight: "100vh",
+      }}
+    >
+      <BrowserRouter>
+        <Routes>
+          <Route path="/"></Route>
+        </Routes>
+        <Nav />
+      </BrowserRouter>
+    </Box>
   );
-}
+};
 
 export default App;
