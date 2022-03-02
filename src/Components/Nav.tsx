@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Box, BottomNavigation, BottomNavigationAction } from "@mui/material";
-import { AccountCircle, SportsSoccer, Home, Settings } from "@mui/icons-material";
+import {
+  AccountCircle,
+  Timeline,
+  Home,
+  Settings,
+  LocalFireDepartmentSharp,
+} from "@mui/icons-material";
 import { useLocation } from "react-router-dom";
 
 import { Link } from "react-router-dom";
@@ -32,7 +38,7 @@ const Nav = () => {
   }, [pathname]);
 
   return (
-    <nav className="footer mt-auto">
+    <nav className="nav">
       <Box className="w-100">
         <BottomNavigation
           showLabels
@@ -44,14 +50,20 @@ const Nav = () => {
           <BottomNavigationAction component={Link} to="/" label="Home" icon={<Home />} />
           <BottomNavigationAction
             component={Link}
-            to="/#"
-            label="Toernooien"
-            icon={<SportsSoccer />}
+            to="/grafiek"
+            label="Grafiek"
+            icon={<Timeline />}
+          />
+          <BottomNavigationAction
+            component={Link}
+            to="/verwarming"
+            label="Verwarming"
+            icon={<LocalFireDepartmentSharp />}
           />
           <BottomNavigationAction
             component={Link}
             to="/login"
-            label="Account"
+            label="Login"
             icon={<AccountCircle />}
           />
           <BottomNavigationAction
